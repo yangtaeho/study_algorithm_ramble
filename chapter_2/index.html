@@ -14,7 +14,11 @@
             });
             const test =(fname, a, b)=> {
                 const c2 = new C2();
-                console.log(fname, a, b, c2[fname](a, b));
+                console.log(fname.padStart(14, ' '), a, b, c2[fname](a, b));
+            };
+            const test2 =(fname, r, a, b)=> {
+                const c2 = new C2();
+                console.log(fname.padStart(14, ' '), a, b, c2[fname](r, a, b), r);
             };
             [...Array(10)].map((v,i) => {
                 [...Array(10)].map((v,j) => {
@@ -27,9 +31,22 @@
                     console.log('i:', i, ', j', j, i*j);
                     test('multiply0', i, j);
                     test('multiply1', i, j);
+                    test2('mult_acc0', 0, i, j);
+                    test2('mult_acc1', 0, i, j);
+                    test2('mult_acc2', 0, i, j);
+                    test2('mult_acc3', 0, i, j);
+                    test('multiply2', i, j);
+                    test('multiply3', i, j);
+                    test('multiply4', i, j);
+                });
+                test('multiply_by_15', i);
+            });
+            [49371].map((v,i) => {
+                [289].map((ve,j) => {
+                    test('multiply2', v, ve);
                 });
             });
-            
+
         };
     </script>
 </head>
