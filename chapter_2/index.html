@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter2</title>
+    <script src="2_1_egypt_product.js"></script>
+    <script>
+        const init = ()=> {
+            
+            [...Array(9)].map((v,i) => {
+                console.log('i:', i, ', odd', odd(i), ', half', half(i));
+            });
+            const test =(fname, a, b)=> {
+                const c2 = new C2();
+                console.log(fname, a, b, c2[fname](a, b));
+            };
+            [...Array(10)].map((v,i) => {
+                [...Array(10)].map((v,j) => {
+                    console.log('i:', i, ', j', j, i*j);
+                });
+            });
+            
+            [...Array(10)].map((v,i) => {
+                [...Array(10)].map((v,j) => {
+                    console.log('i:', i, ', j', j, i*j);
+                    test('multiply0', i, j);
+                    test('multiply1', i, j);
+                });
+            });
+            
+        };
+    </script>
+</head>
+<body onload="init()">
+    <button type="button" onclick="init()">시작</button>
+</body>
+</html>
