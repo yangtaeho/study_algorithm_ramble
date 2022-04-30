@@ -145,8 +145,6 @@ class C2 {
             n = half(n);
             a = a + a;
         }
-        console.log('루프 밖으로.. 나오지 않음', r, n, a);
-        return r;
     }
     multiply2 (n, a){
         if (n < 1) return 0;
