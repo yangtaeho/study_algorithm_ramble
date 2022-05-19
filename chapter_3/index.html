@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter3</title>
+    <script src="3_1_sieve_of_eratosthenes.js"></script>
+    <script>
+        const init = ()=> {
+            
+            const test =(fname, a)=> {
+                const c3 = new C3();
+                console.log(fname.padStart(14, ' '), a, c3[fname](a));
+            };
+            const test2 =(fname, r, a, b)=> {
+                const c3 = new C3();
+                console.log(fname.padStart(14, ' '), a, b, c3[fname](r, a, b), r);
+            };
+            const c33 = new C3();
+            const test3 =(fname, i, a)=> {
+                console.log(fname.padStart(21, ' '), i, c33[fname](a));
+            };
+            
+            [...Array(10)].map((v,i) => {
+                console.log('i:', i);
+                test('tri', i);
+                test('rect', i);
+                test('rectEx', i);
+                test2('sift0', [], i);
+            });
+            
+            test3('primm', 3000);
+            [...Array(10)].map((v,i) => {
+                test3('vByPrime', i, i);
+                test3('vByPrimeRes', i, i);
+                test3('getIndexByPrimeRes', i, c33.vByPrime(i));
+                test3('getIndexByPrime', i, c33.vByPrime(i));
+            });
+            
+            /* 
+            [...Array(10)].map((v,i) => {
+                [...Array(10)].map((v,j) => {
+                    console.log('i:', i, ', j', j, i*j);
+                    test('sift0', i, j);
+                });
+            });
+            [49371].map((v,i) => {
+                [289].map((ve,j) => {
+                    test('multiply2', v, ve);
+                });
+            });
+             */
+        };
+    </script>
+</head>
+<body onload="init()">
+    <button type="button" onclick="init()">시작</button>
+</body>
+</html>

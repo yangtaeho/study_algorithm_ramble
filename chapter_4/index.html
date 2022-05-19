@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chapter4</title>
+    <script src="4_euclidean_algorithm.js"></script>
+    <script>
+        const init = ()=> {
+            
+            const test =(fname, a)=> {
+                const c4 = new C4();
+                console.log(fname.padStart(14, ' '), a, c4[fname](a));
+            };
+            const test2 =(fname, r, a, b)=> {
+                const c4 = new C4();
+                console.log(fname.padStart(14, ' '), a, b, c4[fname](r, a, b), r);
+            };
+            const c43 = new C4();
+            const test3 =(fname, i, a)=> {
+                console.log(fname.padStart(21, ' '), i, c43[fname](a));
+            };
+            const test4 =(fname, a, b)=> {
+                const c4 = new C4();
+                console.log(fname.padStart(14, ' '), a, b, c4[fname](a, b));
+            };
+            
+            [...Array(10)].map((v,i) => {
+                console.log('i:', i);
+                test('gcm0', i);
+            });
+            
+            [...Array(10)].map((v,i) => {
+                [...Array(10)].map((v,j) => {
+                    console.log('i:', i, ', j', j);
+                    test4('gcm0', i, j);
+                });
+            });
+            /* 
+            [49371].map((v,i) => {
+                [289].map((ve,j) => {
+                    test('multiply2', v, ve);
+                });
+            });
+             */
+        };
+    </script>
+</head>
+<body onload="init()">
+    <button type="button" onclick="init()">시작</button>
+</body>
+</html>
